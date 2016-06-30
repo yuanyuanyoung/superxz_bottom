@@ -23,6 +23,8 @@ public class AboutActivity extends VehicleActivity {
 		super.initTop();
 
 
+
+
 		setTitle("关于");
 		tv_version.setText(PubUtils.getAppVersionName(AboutActivity.this));
 
