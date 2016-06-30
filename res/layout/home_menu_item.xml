@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter"
+        android:src="@drawable/default_photo"
+        android:visibility="gone" />
+
+    <com.dh.superxz_bottom.view.CircleImageView
+        android:id="@+id/civ_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/default_photo"
+        app:border_color="#FF222222"
+        app:border_width="2dp" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        fresco:placeholderImage="@drawable/default_photo"
+        fresco:roundAsCircle="true"
+        fresco:roundedCornerRadius="48dp"
+        fresco:roundingBorderColor="#fe7f65"
+        fresco:roundingBorderWidth="5dp" />
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="描述文字"
+        android:textColor="@color/tab_text_color"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/tv_sub_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:textColor="#d0d0d0"
+        android:textSize="12sp" />
+
+</LinearLayout>

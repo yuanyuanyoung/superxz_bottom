@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="auto_focus" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="viewpager" type="id"/>
+
+    <item  name="exchange_hint" type="id"/>
+     <item type="id" name="gridview" />
+    <item type="id" name="webview" />
+    <item type="id" name="scrollview" />
+    
+    <item type="id" name="iv_hs_icon_1">200</item>
+    <item type="id" name="iv_hs_icon_2">201</item>
+    <item type="id" name="iv_hs_icon_3">202</item>
+    
+    <item type="id" name="tv_hs_name_1">300</item>
+    <item type="id" name="tv_hs_name_2">301</item>
+    <item type="id" name="tv_hs_name_3">302</item>
+    
+    <item type="id" name="tv_hs_price_1">400</item>
+    <item type="id" name="tv_hs_price_2">401</item>
+    <item type="id" name="tv_hs_price_3">402</item>
+</resources>

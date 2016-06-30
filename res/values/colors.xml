@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common colors start -->
+    <color name="green">#7CCD7C</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_blank_font1">#cfc2c0</color>
+    <color name="gray_back">#d6d6d6</color>
+    <!-- RGB: 214 214 214 -->
+    <color name="gray_line">#d3d3d3</color>
+    <!-- RGB: 225 225 225 -->
+    <color name="gray_text">#666666</color>
+    <!-- RGB: 102 102 102 -->
+    <color name="gray_light_text">#999999</color>
+    <!-- RGB: 153 153 153 -->
+    <color name="gray_wheel_text">#adadad</color>
+    <!-- RGB: 173 173 173 -->
+    <color name="gray_child_back">#f9f9f9</color>
+    <!-- RGB: 249	249	249 -->
+
+    <color name="gray_shallow1">#777777</color>
+    <!-- RGB: 119	119	119 -->
+    <color name="gray_shallow2">#d3d3d3</color>
+    <!-- RGB: 195	195	195 -->
+
+    <color name="gray_shallow4">#696969</color>
+    <!-- RGB: 106	106	106 -->
+
+    <color name="gray_shallow3">#d5d5d5</color>
+    <color name="gray_bg">#eeeeee</color>
+    <color name="transparent_black">#30000000</color>
+    <!-- common colors end -->
+
+
+    <!-- 242 242 242 对应 f2f2f2 -->
+    <color name="gray_shallow5">#f2f2f2</color>
+
+    <!-- 34 34 34 对应 222222 -->
+    <color name="gray_shallow6">#222222</color>
+    <color name="tab_text_color">#666666</color>
+    <color name="red_shallow1">#d63e25</color>
+    <!-- RGB: 214	62	37 -->
+
+
+    <!-- RGB: 128	128	128   冬青灰 -->
+    <color name="gray_holly_text">#808080</color>
+
+    <!-- 顶部栏红色 -->
+    <color name="main_red">#f13f2f</color>
+    <!-- RGB: 241 63 47 -->
+    <color name="wb_bg">#f8f8f8</color>
+    <!-- RGB: 248 248 248 -->
+    <color name="wb_choose_line">#d3d3d3</color>
+    <!-- RGB: 211 211 211 -->
+    <color name="wb_item_name">#484848</color>
+    <!-- RGB: 72 72 72 -->
+    <color name="wb_item_line">#e5e5e5</color>
+    <!-- RGB: 229 229 229 -->
+    <color name="wb_item_type">#6d6d75</color>
+    <!-- RGB: 109 109 117 -->
+    <color name="wb_item_distance">#b7b7b7</color>
+    <!-- RGB: 183 183 183 -->
+    <color name="wb_detail_num">#333333</color>
+    <!-- RGB: 51 51 51 -->
+    <color name="wb_detail_name">#4c4c4c</color>
+    <!-- RGB: 76 76 76 -->
+    <color name="wb_top_line">#b2b2b2</color>
+    <!-- RGB: 178 178 178 -->
+
+
+    <!-- 首页字体颜色 -->
+    <color name="text_dark_red">#e3a08e</color>
+    <color name="text_dark_red2">#e37050</color>
+    <color name="red">#EE2F00</color>
+    <color name="pwd_setting_color">#FFCEC1</color>
+    <color name="order_text_sencond_black">#343434</color>
+    <!-- 订单颜色 -->
+    <color name="order_text_black">#3d4245</color>
+    <color name="share_success_yellow_text">#ffe400</color>
+    <!-- RGB: 61 66 69 -->
+    <color name="order_text_blue">#038cd6</color>
+    <!-- RGB: 3 104 214 -->
+    <color name="order_text_orange">#fc6600</color>
+    <!-- RGB: 252 102 0 -->
+
+    <color name="order_sevice_name">#9b9b9b</color>
+    <!-- RGB: 155 155 155 -->
+    <color name="order_total_price">#555555</color>
+    <!-- RGB: 85 85 85 -->
+    <color name="order_text_orange_two">#fc6e08</color>
+    <!-- RGB: 252 110 8 -->
+    <color name="order_black_two">#626262</color>
+    <!-- RGB: 98 98 98 -->
+    <color name="order_blue_two">#5bb5db</color>
+    <!-- RGB: 91 181 219 -->
+    <color name="order_background_orange">#fc6e08</color>
+    <!-- RGB: 252 110 8 -->
+    <color name="order_background_gray">#cccccc</color>
+    <!-- RGB: 204 204 204 -->
+
+    <color name="exchange_aa_coin">#08affc</color>
+    <!-- RGB: 8 175 252 -->
+    <color name="exchange_green">#00ccad</color>
+    <!-- RGB: 0 204 173 -->
+    <color name="exchange_orange">#fd7c0a</color>
+    <color name="tv_bind_zsy">#16b8ed</color>
+    <!-- RGB: 8 175 252 -->
+
+
+    <!-- 黑匣子颜色 -->
+    <color name="hxz_check_ok_blue">#3597ec</color>
+    <color name="hxz_check_score_blue">#52af82</color>
+    <color name="hxz_check_error_red">#f13f2f</color>
+    <color name="hxz_white_char">#ffffff</color>
+    <color name="hxz_gray_char">#dbdbdb</color>
+    <color name="hxz_red_cutline">#f15a34</color>
+    <color name="hxz_green_cutline">#57bd7d</color>
+    <color name="hxz_blue_cutline">#23b2d6</color>
+    <color name="hxz_carinfo_black">#4c4c4c</color>
+    <color name="hxz_common_backgroud">#f8f8f8</color>
+    <color name="hxz_common_headblack">#3f3f3f</color>
+    <color name="hxz_carinfo_datacutline">#f8f8f8</color>
+    <color name="hxz_carcheck_info">#696969</color>
+    <color name="hxz_carcheck_graynote">#aaaaaa</color>
+    <color name="hxz_new_background">#f8f8f8</color>
+    <color name="hxz_textcolor_gray">#6b6b6b</color>
+    <color name="hxz_textcolor_darkgray">#4c4c4c</color>
+    <color name="hxz_car_guard_line">#d9d9d9</color>
+    <color name="hxz_set_text_color">#858585</color>
+    <color name="hxz_carinfo_yellow">#f3d2c5</color>
+    <color name="hxz_drivereport_orange">#ff7d35</color>
+    <color name="hxz_check_fault_title">#545454</color>
+    <color name="in_out_success_text">#42D130</color>
+    <color name="in_out_fail_text">#FF2A00</color>
+    <color name="activate_info_step_text">#d94234</color>
+    <color name="grade_score">#fa952f</color>
+    <color name="grade_score_detail">#fc6e08</color>
+    <color name="city_query_background">#CDC9C9</color>
+    <color name="wb_search_clear_text">#959595</color>
+    <color name="yhq_green">#53A000</color>
+    <color name="grey_red_f89487">#f89487</color>
+    <color name="shallow_gray_text">#999999</color>
+    <color name="yellowish_brown_text">#a0836b</color>
+    <color name="identifying_btn_disable">#ffb278</color>
+    <color name="discover_item_444444">#444444</color>
+    <color name="home_gray_line">#E7E5E2</color>
+    <color name="question_green">#34c45c</color>
+    <color name="my_question_car_model">#38b059</color>
+    <color name="blue_text">#0079ff</color>
+    <color name="pay_record_text">#2ac380</color>
+    <color name="holly_text">#008fe9</color>
+    <color name="brown_text">#EBAE62</color>
+    <color name="narrow_brown_bg">#FFFBDC</color>
+    <color name="vouchers_item_money">#6b7299</color>
+    <color name="vouchers_item_type_name">#b6b6b6</color>
+    <color name="vouchers_item_money_used">#cfcfcf</color>
+    <color name="refuel_indicator_active">#00ABFF</color>
+    <color name="refuel_indicator_inactive">#E8E7E4</color>
+    <color name="refuel_more">#2E95EC</color>
+    <color name="refuel_quality_text">#A5BCCC</color>
+    <color name="subduction_color">#00C13A</color>
+    <color name="pay_color">#0095EA</color>
+    <color name="transact_color">#FF4700</color>
+    <color name="exchange_color">#FFC400</color>
+    <color name="map_button_gray">#C0EDECEA</color>
+    <color name="map_button_gray2">#90000000</color>
+    <color name="color_fafafa">#fafafa</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_e91e63">#e91e63</color>
+
+</resources>

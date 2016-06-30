@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.pro.PhotoViewActivity" >
+
+    <com.dh.superxz_bottom.view.photoview.HackyViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:background="#ffffff"
+        android:layout_height="fill_parent" >
+    </com.dh.superxz_bottom.view.photoview.HackyViewPager>
+
+</RelativeLayout>

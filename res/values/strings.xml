@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">东汇demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <!-- framework层 start -->
+    <string name="frame_tip_unlogin">未登录</string>
+    <string name="frame_tip_no_net">网络连接失败，请确认开启了wifi或手机卡网络!</string>
+    <string name="frame_tip_params_error">连接失败，入参格式不正确！</string>
+    <string name="frame_tip_conn_error">连接失败，平台正在维护中!</string>
+    <string name="frame_tip_parser_date_exception">连接失败，解析数据格式不正确!</string>
+    <string name="frame_tip_response_overtime_exception">连接失败，请求超时</string>
+    <string name="frame_tip_response_exception">连接失败，请稍候重试</string>
+    <string name="frame_tip_loading_date">获取数据中,请稍候..."</string>
+    <string name="open_fail">打开失败"</string>
+    <!-- framework层 end -->
+    <!-- pulltorefresh -->
+    <string name="pull_to_refresh_from_bottom_pull_label">上拉可以刷新</string>
+    <string name="pull_to_refresh_from_bottom_release_label">松开获取更多</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="pull_to_refresh_pull_label" translatable="false">下拉动可以刷新</string>
+    <string name="pull_to_refresh_release_label" translatable="false">松开刷新\&#046;\&#046;\&#046;</string>
+    <string name="pull_to_refresh_refreshing_label" translatable="false">正在加载中…</string>
+    <string name="pull_to_refresh_tap_label" translatable="false">点击刷新</string>
+
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dh.superxz_bottom"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:name="com.dh.superxz_bottom.VehicleApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        st
+        <activity
+            android:name="com.dh.superxz_bottom.yinzldemo.FragmentTabActivity2"
+            android:label="@string/app_name"
+            android:theme="@style/NoSwipeActivityTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dh.superxz_bottom.yinzldemo.EventBusActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SwipeActivityTheme" >
+        </activity>
+        <activity
+            android:name="com.dh.superxz_bottom.yinzldemo.DatePickerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SwipeActivityTheme" >
+        </activity>
+        <!-- 关于 -->
+        <activity
+            android:name="com.dh.superxz_bottom.activity.AboutActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SwipeActivityTheme" >
+        </activity>
+        <activity
+            android:name="com.dh.superxz_bottom.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/NoSwipeActivityTheme" >
+        </activity>
+        <activity
+            android:name="com.dh.superxz_bottom.activity.ForgetActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SwipeActivityTheme" >
+        </activity>
+        <activity
+            android:name="com.dh.superxz_bottom.activity.RegisterActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SwipeActivityTheme" >
+        </activity>
+        <activity
+            android:name="com.dh.superxz_bottom.yinzldemo.PhotoViewActivity"
+            android:label="@string/app_name"
+            android:theme="@style/SwipeActivityTheme" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+</manifest>
