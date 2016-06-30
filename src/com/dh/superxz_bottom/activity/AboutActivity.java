@@ -21,6 +21,8 @@ public class AboutActivity extends VehicleActivity {
 		setContentView(R.layout.activity_about);
 		ViewUtils.inject(this);
 		super.initTop();
+
+
 		setTitle("关于");
 		tv_version.setText(PubUtils.getAppVersionName(AboutActivity.this));
 
