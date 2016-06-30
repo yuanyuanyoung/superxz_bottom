@@ -22,6 +22,7 @@ import com.facebook.imagepipeline.cache.MemoryCacheParams;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 
 public class VehicleApp extends Application {
+	//this is local develop_test
 	private static VehicleApp instance;
 
 	private AfeiDb afeiDb;
