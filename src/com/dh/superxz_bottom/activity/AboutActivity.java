@@ -10,6 +10,7 @@ import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
 import com.dh.superxz_bottom.yinzldemo.VehicleActivity;
 
 public class AboutActivity extends VehicleActivity {
+	//
 	@ViewInject(R.id.tv_version)
 	private TextView tv_version;
 	@ViewInject(R.id.tv_xieyi)
