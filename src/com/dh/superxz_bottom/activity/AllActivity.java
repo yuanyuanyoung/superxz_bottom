@@ -60,6 +60,7 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
         if (Build.VERSION.SDK_INT >= 19) {
             ll_top.setVisibility(View.VISIBLE);
             ll_side_top.setVisibility(View.VISIBLE);
+            //透明状态栏
             getWindow()
                     .addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             //设置(侧边)顶部块高度
