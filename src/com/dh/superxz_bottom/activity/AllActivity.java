@@ -34,8 +34,8 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
     private ListView lv_side;
     @ViewInject(R.id.ll_top)
     private LinearLayout ll_top;
-    @ViewInject(R.id.ll_side_top)
-    private LinearLayout ll_side_top;
+    @ViewInject(R.id.ll_side_top)//顶部颜色块
+    private LinearLayout ll_side_top;//侧滑顶部颜色块
     @ViewInject(R.id.tv_menu)
     private TextView tv_menu;
     private long exitTime = 0;
@@ -74,7 +74,7 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
 
         lv_side.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1,
-                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "6", "7", "8"}));
+                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "SRV", "7", "8"}));
         lv_side.setOnItemClickListener(this);
         tv_menu.setOnClickListener(this);
 
@@ -106,6 +106,10 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
                 break;
             case 4:
                 intent.setClass(AllActivity.this, DatePickerActivity.class);
+                startActivity(intent);
+                break;
+            case 5:
+                intent.setClass(AllActivity.this, RecycleTestActivity.class);
                 startActivity(intent);
                 break;
             default:
