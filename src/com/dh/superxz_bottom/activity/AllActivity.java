@@ -74,7 +74,7 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
 
         lv_side.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1,
-                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "SRV", "7", "8"}));
+                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "侧滑删除RecyclerView", "7", "8"}));
         lv_side.setOnItemClickListener(this);
         tv_menu.setOnClickListener(this);
 
