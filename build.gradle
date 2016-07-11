@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0-alpha4'
+        classpath 'com.android.tools.build:gradle:2.2.0-alpha5'
     }
 }
 apply plugin: 'com.android.application'
@@ -15,7 +15,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha2'
     compile 'com.android.support:recyclerview-v7:22.2.0'
-    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }
 
 android {
