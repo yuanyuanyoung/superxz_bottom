@@ -50,6 +50,28 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
     }
 
     private void initData() {
+//        try {
+//           InputStream inputStream= getAssets().open("data.txt");
+//
+//            int length = inputStream.available();
+//
+//            byte [] buffer = new byte[length];
+//
+//            //读取数据
+//            inputStream.read(buffer);
+//
+//            //依test.txt的编码类型选择合适的编码，如果不调整会乱码
+//            String s= EncodingUtils.getString(buffer, "BIG5");
+//           MyToast.show(AllActivity.this,"11111111111"+s,5000);
+//
+//            //关闭
+//            inputStream.close();
+//
+//
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }
