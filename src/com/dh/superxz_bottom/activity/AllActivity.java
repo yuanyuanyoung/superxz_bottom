@@ -4,21 +4,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dh.superxz_bottom.R;
 import com.dh.superxz_bottom.VehicleApp;
 import com.dh.superxz_bottom.dhutils.CommUtil;
-import com.dh.superxz_bottom.xutils.sample.utils.PubUtils;
 import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
 import com.dh.superxz_bottom.yinzldemo.DatePickerActivity;
@@ -39,7 +40,14 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
     @ViewInject(R.id.tv_menu)
     private TextView tv_menu;
     private long exitTime = 0;
-
+    @ViewInject(R.id.btn_top_right)
+    private Button btn_top_right;
+    @ViewInject(R.id.content)
+    private View mContentView;
+    @ViewInject(R.id.loading_spinner)
+    private View mLoadingView;
+    private int mShortAnimationDuration;
+    private boolean isclick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,8 +81,8 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
 //            e.printStackTrace();
 //        }
 
-
     }
+
 
     private void initView() {
 
@@ -100,6 +108,7 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
                 new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "侧滑删除RecyclerView", "7", "8"}));
         lv_side.setOnItemClickListener(this);
         tv_menu.setOnClickListener(this);
+        btn_top_right.setOnClickListener(this);
 
     }
 
@@ -141,33 +150,72 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
         ;
 
     }
-
+    private boolean isExit = false;
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK
-                && event.getAction() == KeyEvent.ACTION_DOWN) {
-            if ((System.currentTimeMillis() - exitTime) > 2000) {
-                PubUtils.popTipOrWarn(this, "再按一次退出程序");
-                exitTime = System.currentTimeMillis();
-            } else {
-                VehicleApp.getInstance().exit();
-            }
-            return true;
+    public void onBackPressed() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    isExit = false;
+                }
+            }, 2000);
+        } else {
+            VehicleApp.getInstance().exit();
+            finish();
         }
-        return super.onKeyDown(keyCode, event);
     }
+
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK
+//                && event.getAction() == KeyEvent.ACTION_DOWN) {
+//            if ((System.currentTimeMillis() - exitTime) > 2000) {
+//                PubUtils.popTipOrWarn(this, "再按一次退出程序");
+//                exitTime = System.currentTimeMillis();
+//            } else {
+//                VehicleApp.getInstance().exit();
+//            }
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
+
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.tv_menu:
                 dl_drawer_layout.openDrawer(Gravity.LEFT);
 
                 break;
+            case R.id.btn_top_right:
+//                if (!isclick)
+//                    crossfade();
+//                else
+//                    defaultView();
+                break;
+
             default:
                 break;
 
-        };
+        }
+        ;
     }
-}
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+

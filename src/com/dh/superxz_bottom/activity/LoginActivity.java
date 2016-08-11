@@ -22,7 +22,6 @@ import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
 import com.dh.superxz_bottom.xutils.view.annotation.event.OnClick;
 import com.dh.superxz_bottom.yinzldemo.FragmentTabActivity2;
-import com.dh.superxz_bottom.yinzldemo.VehicleActivity;
 import com.dh.superxz_bottom.yinzldemo.VehicleNoSwipbackActivity;
 
 public class LoginActivity extends VehicleNoSwipbackActivity {
@@ -174,6 +173,9 @@ public class LoginActivity extends VehicleNoSwipbackActivity {
 			ToastUtil.showLong(getApplicationContext(), "登录成功");
 		}
 	}
+
+
+
 
 	//
 	// public void querylogin() {
