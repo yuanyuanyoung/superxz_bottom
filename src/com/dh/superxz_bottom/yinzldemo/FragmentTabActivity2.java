@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.dh.superxz_bottom.R;
 import com.dh.superxz_bottom.VehicleApp;
+import com.dh.superxz_bottom.activity.AllActivity;
 import com.dh.superxz_bottom.fragment.BitmapFragment;
 import com.dh.superxz_bottom.fragment.EventBusFragment;
 import com.dh.superxz_bottom.fragment.FragmentTabHost;
@@ -36,10 +37,10 @@ import com.dh.superxz_bottom.xutils.sample.utils.PubUtils;
  */
 public class FragmentTabActivity2 extends VehicleNoSwipbackActivity {
 	public static final String HOME_TAB_TYPE = "tab_type";
-	public static final String TAB_INDEX = "http";
-	public static final String TAB_LEIGOU = "list";
-	public static final String TAB_ORDER = "image";
-	public static final String TAB_MY = "eventbus";
+	public static final String TAB_INDEX = "首页";
+	public static final String TAB_LEIGOU = "分类";
+	public static final String TAB_ORDER = "书架";
+	public static final String TAB_MY = "我的";
 
 	private FragmentTabHost mTabHost;
 	private View v_indicator;
@@ -54,14 +55,14 @@ public class FragmentTabActivity2 extends VehicleNoSwipbackActivity {
 
 		mTabHost = (FragmentTabHost) findViewById(R.id.tabhost);
 		mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
-		addTab(TAB_INDEX, R.drawable.ic_launcher, R.drawable.ic_launcher,
+		addTab(TAB_INDEX,  R.drawable.main_radiobutton_home_light,R.drawable.main_radiobutton_home_normal,
 				HttpFragment.class);
-		addTab(TAB_LEIGOU, R.drawable.ic_launcher,
-		// R.drawable.home_tab_leigou, LejiaquanFragment.class);
-				R.drawable.ic_launcher, ListNewFragment.class);
-		addTab(TAB_ORDER, R.drawable.ic_launcher, R.drawable.ic_launcher,
+		addTab(TAB_LEIGOU,
+		R.drawable.main_radiobutton_game_light,R.drawable.main_radiobutton_game_normal, HttpFragment.class);
+
+		addTab(TAB_ORDER, R.drawable.main_radiobutton_bookshelf_light, R.drawable.main_radiobutton_bookshelf_normal,
 				BitmapFragment.class);
-		addTab(TAB_MY, R.drawable.ic_launcher, R.drawable.ic_launcher,
+		addTab(TAB_MY,  R.drawable.main_radiobutton_mine_light,R.drawable.main_radiobutton_mine_normal,
 				EventBusFragment.class);
 
 		v_indicator = findViewById(R.id.v_indicator);
