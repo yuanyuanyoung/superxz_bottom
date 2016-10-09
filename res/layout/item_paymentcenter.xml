@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dip"
+    android:paddingLeft="20dip"
+    android:paddingRight="15dip"
+    android:paddingTop="5dip" >
+
+    <com.dh.superxz_bottom.view.CircleImageView
+        android:id="@+id/pc_it_ci_payment_icon"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/default_photo"
+        app:border_color="@android:color/transparent"
+        app:border_width="0dip" />
+
+    <TextView
+        android:id="@+id/pc_it_tv_payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/pc_it_ci_payment_icon"
+        android:paddingLeft="10dip"
+        android:textColor="#222222" />
+
+    <CheckBox
+        android:id="@+id/pc_it_cb_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="" />
+
+</RelativeLayout>
