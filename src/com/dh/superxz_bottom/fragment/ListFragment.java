@@ -1,9 +1,5 @@
 package com.dh.superxz_bottom.fragment;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -19,10 +15,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.dh.superxz_bottom.R;
 import com.dh.superxz_bottom.adapter.ArrayListAdapter;
 import com.dh.superxz_bottom.adapter.ViewHolder;
-import com.dh.superxz_bottom.alibaba.fastjson.JSON;
 import com.dh.superxz_bottom.entity.HrVOBean;
 import com.dh.superxz_bottom.framework.log.L;
 import com.dh.superxz_bottom.framework.net.exception.DataException;
@@ -41,6 +37,10 @@ import com.dh.superxz_bottom.handmark.pulltorefresh.library.SwipeListView;
 import com.dh.superxz_bottom.xutils.sample.utils.ToastUtil;
 import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**

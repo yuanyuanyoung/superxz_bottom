@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -43,7 +42,6 @@ public class VehicleActivity extends FragmentActivity implements
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		overridePendingTransition(R.anim.activity_ani_enter, 0);
 		getWindow().setBackgroundDrawable(new ColorDrawable(0));
 		getWindow().getDecorView().setBackgroundDrawable(null);

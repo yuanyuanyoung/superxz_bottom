@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.dh.superxz_bottom.R;
 
+
 /**
  * 上拉加载更多的swiperefreshlayout
  */
@@ -54,6 +55,21 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	 */
 	private boolean isLoading = false;
 
+	public boolean isCanScroll() {
+		return canScroll;
+	}
+
+	public void setCanScroll(boolean canScroll) {
+		this.canScroll = canScroll;
+	}
+
+	/*
+    * 数据加载完毕使用
+    *  swiperefreshlayout.setLoading(false);
+       swiperefreshlayout.setCanScroll(true);
+    * */
+	private boolean canScroll = true;
+
 	/**
 	 * @param context
 	 */
@@ -73,7 +89,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 
 	@Override
 	protected void onLayout(boolean changed, int left, int top, int right,
-			int bottom) {
+							int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
 
 		// 初始化ListView对象
@@ -105,42 +121,42 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 	}
 
 	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.view.ViewGroup#dispatchTouchEvent(android.view.MotionEvent)
-	 */
+     * (non-Javadoc)
+     *
+     * @see android.view.ViewGroup#dispatchTouchEvent(android.view.MotionEvent)
+     */
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent event) {
 		final int action = event.getAction();
 
 		switch (action) {
-		case MotionEvent.ACTION_DOWN:
-			// 按下
-			// mYDown = (float) event.getX();
-			// mXDown = (int) event.getRawX();
-			mDownY = event.getY();
-			// mDownX = event.getX();
-			mTouchState = TOUCH_STATE_NONE;
-			break;
+			case MotionEvent.ACTION_DOWN:
+				// 按下
+				// mYDown = (float) event.getX();
+				// mXDown = (int) event.getRawX();
+				mDownY = event.getY();
+				// mDownX = event.getX();
+				mTouchState = TOUCH_STATE_NONE;
+				break;
 
-		case MotionEvent.ACTION_MOVE:
-			// 移动
-			// mLastY = (float) event.getX();
-			// mLastX = (int) event.getRawX();
+			case MotionEvent.ACTION_MOVE:
+				// 移动
+				// mLastY = (float) event.getX();
+				// mLastX = (int) event.getRawX();
 
-			if ((mDownY - event.getY()) >= mTouchSlop) {
-				mTouchState = TOUCH_STATE_Y;
-			}
-			break;
+				if ((mDownY - event.getY()) >= mTouchSlop) {
+					mTouchState = TOUCH_STATE_Y;
+				}
+				break;
 
-		case MotionEvent.ACTION_UP:
-			// 抬起
-			if (canLoad()) {
-				loadData();
-			}
-			break;
-		default:
-			break;
+			case MotionEvent.ACTION_UP:
+				// 抬起
+				if (canLoad()) {
+					loadData();
+				}
+				break;
+			default:
+				break;
 		}
 
 		return super.dispatchTouchEvent(event);
@@ -148,11 +164,11 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 
 	/**
 	 * 是否可以加载更多, 条件是到了最底部, listview不在加载中, 且为上拉操作.
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean canLoad() {
-		return isBottom() && !isLoading && isPullUp();
+		return isBottom() && !isLoading && isPullUp() && isCanScroll();
 	}
 
 	/**
@@ -169,7 +185,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 
 	/**
 	 * 是否是上拉操作
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean isPullUp() {
@@ -198,7 +214,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 		isLoading = loading;
 		try {
 			if (isLoading) {
-				if (null != mListView && null != mListViewFooter)
+				if (null != mListView && null != mListViewFooter && isCanScroll())
 					mListView.addFooterView(mListViewFooter);
 			} else {
 				if (null != mListView && null != mListViewFooter)
@@ -227,7 +243,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem,
-			int visibleItemCount, int totalItemCount) {
+						 int visibleItemCount, int totalItemCount) {
 		this.setEnabled(true);
 		// 滚动时到了最底部也可以加载更多
 		if (canLoad()) {
@@ -237,7 +253,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements
 
 	/**
 	 * 加载更多的监听器
-	 * 
+	 *
 	 * @author mrsimple
 	 */
 	public static interface OnLoadListener {

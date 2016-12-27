@@ -1,9 +1,5 @@
 package com.dh.superxz_bottom.fragment;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.dh.superxz_bottom.R;
 import com.dh.superxz_bottom.VehicleApp;
-import com.dh.superxz_bottom.alibaba.fastjson.JSON;
 import com.dh.superxz_bottom.constant.Constant;
 import com.dh.superxz_bottom.entity.HrVOBean;
 import com.dh.superxz_bottom.framework.db.AfeiDb;
@@ -31,6 +27,10 @@ import com.dh.superxz_bottom.xutils.sample.utils.ToastUtil;
 import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
 import com.dh.superxz_bottom.yinzldemo.VehicleFragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author 超级小志

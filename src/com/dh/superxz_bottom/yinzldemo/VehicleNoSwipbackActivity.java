@@ -14,7 +14,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -31,7 +30,7 @@ public class VehicleNoSwipbackActivity extends FragmentActivity implements
 		View.OnClickListener {
 
 	protected Button btn_top_right;
-
+	private  SystemBarTintManager mTintManager;
 	private WindowManager windowManager;
 	private WindowManager.LayoutParams fluctuateParam;
 	private boolean isShowFluctuate;
@@ -39,7 +38,6 @@ public class VehicleNoSwipbackActivity extends FragmentActivity implements
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		VehicleApp.getInstance().addActivity(this);
 		afeiDb = VehicleApp.getInstance().getAfeiDb();
 		if (null == afeiDb) {
@@ -49,13 +47,16 @@ public class VehicleNoSwipbackActivity extends FragmentActivity implements
 			//透明状态栏
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-			SystemBarTintManager mTintManager = new SystemBarTintManager(this);
+			 mTintManager = new SystemBarTintManager(this);
 			mTintManager.setStatusBarTintEnabled(true);
 			mTintManager.setTintColor(0xF00099CC);
 
 		}
 	}
-
+	//除去状态栏
+	public void setNomStatus(){
+		mTintManager.setStatusBarTintEnabled(false);
+	}
 	protected void initTop() {
 		RelativeLayout btn_back = (RelativeLayout) this
 				.findViewById(R.id.btn_title_btn_back_layout);

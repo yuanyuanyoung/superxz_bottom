@@ -1,18 +1,14 @@
 package com.dh.superxz_bottom.yinzldemo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.dh.superxz_bottom.R;
 import com.dh.superxz_bottom.VehicleApp;
-import com.dh.superxz_bottom.alibaba.fastjson.JSON;
 import com.dh.superxz_bottom.constant.Constant;
 import com.dh.superxz_bottom.entity.HrVOBean;
 import com.dh.superxz_bottom.framework.db.AfeiDb;
@@ -25,6 +21,10 @@ import com.dh.superxz_bottom.framework.net.fgview.Request;
 import com.dh.superxz_bottom.framework.net.fgview.Response;
 import com.dh.superxz_bottom.framework.net.fgview.Response.ErrorMsg;
 import com.dh.superxz_bottom.xutils.sample.utils.ToastUtil;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends Activity {
 	private TextView tv;
