@@ -144,6 +144,10 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
                 intent.setClass(AllActivity.this, RecycleTestActivity.class);
                 startActivity(intent);
                 break;
+            case 6:
+                intent.setClass(AllActivity.this, TabTestActivity.class);
+                startActivity(intent);
+                break;
             default:
                 break;
         }

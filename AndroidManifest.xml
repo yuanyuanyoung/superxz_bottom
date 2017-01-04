@@ -65,6 +65,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RecycleTestActivity"></activity>
+        <activity android:name=".activity.TabTestActivity"
+            android:theme="@style/SwipeActivityTheme" ></activity>
     </application>
 
 </manifest>
