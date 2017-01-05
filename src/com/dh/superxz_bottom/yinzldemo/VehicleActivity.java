@@ -30,103 +30,111 @@ import com.dh.superxz_bottom.view.SwipeBackLayout;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class VehicleActivity extends FragmentActivity implements
-		View.OnClickListener {
+        View.OnClickListener {
 
-	protected Button btn_top_right;
+    protected Button btn_top_right;
 
-	private WindowManager windowManager;
-	private WindowManager.LayoutParams fluctuateParam;
-	private boolean isShowFluctuate;
-	public AfeiDb afeiDb;
-	public SwipeBackLayout swipeBackLayout;
+    private WindowManager windowManager;
+    private WindowManager.LayoutParams fluctuateParam;
+    private boolean isShowFluctuate;
+    public AfeiDb afeiDb;
+    public SwipeBackLayout swipeBackLayout;
+    private SystemBarTintManager mTintManager;
 
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		overridePendingTransition(R.anim.activity_ani_enter, 0);
-		getWindow().setBackgroundDrawable(new ColorDrawable(0));
-		getWindow().getDecorView().setBackgroundDrawable(null);
-		swipeBackLayout = (SwipeBackLayout) LayoutInflater.from(this).inflate(
-				R.layout.base, null);
-		swipeBackLayout.attachToActivity(this);
-		VehicleApp.getInstance().addActivity(this);
-		afeiDb = VehicleApp.getInstance().getAfeiDb();
-		if (null == afeiDb) {
-			afeiDb = AfeiDb.create(this, Constant.DB_NAME, true);
-		}
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.activity_ani_enter, 0);
+        getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        getWindow().getDecorView().setBackgroundDrawable(null);
+        swipeBackLayout = (SwipeBackLayout) LayoutInflater.from(this).inflate(
+                R.layout.base, null);
+        swipeBackLayout.attachToActivity(this);
+        VehicleApp.getInstance().addActivity(this);
+        afeiDb = VehicleApp.getInstance().getAfeiDb();
+        if (null == afeiDb) {
+            afeiDb = AfeiDb.create(this, Constant.DB_NAME, true);
+        }
 
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			//透明状态栏
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-			SystemBarTintManager mTintManager = new SystemBarTintManager(this);
-			mTintManager.setStatusBarTintEnabled(true);
-			 mTintManager.setTintColor(0xF00099CC);
+            mTintManager = new SystemBarTintManager(this);
+            mTintManager.setStatusBarTintEnabled(true);
+            mTintManager.setTintColor(0xF00099CC);
 
-		}
-	}
+        }
+    }
 
-	public void setSwipeBackEnable(boolean enable) {
-		swipeBackLayout.setEnableGesture(enable);
-	}
+    //除去状态栏
+    public void setNomStatus() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            mTintManager.setStatusBarTintEnabled(false);
+        }
+    }
 
-	protected void initTop() {
-		RelativeLayout btn_back = (RelativeLayout) this
-				.findViewById(R.id.btn_title_btn_back_layout);
-		if (null != btn_back) {
-			btn_back.setOnClickListener(this);
-		}
-		btn_top_right = (Button) findViewById(R.id.btn_top_right);
-		if (null != btn_top_right) {
-			btn_top_right.setOnClickListener(this);
-		}
-	}
+    public void setSwipeBackEnable(boolean enable) {
+        swipeBackLayout.setEnableGesture(enable);
+    }
 
-	public void launch(Class<? extends Activity> clazz) {
-		launch(new Intent(this, clazz));
-	}
+    protected void initTop() {
+        RelativeLayout btn_back = (RelativeLayout) this
+                .findViewById(R.id.btn_title_btn_back_layout);
+        if (null != btn_back) {
+            btn_back.setOnClickListener(this);
+        }
+        btn_top_right = (Button) findViewById(R.id.btn_top_right);
+        if (null != btn_top_right) {
+            btn_top_right.setOnClickListener(this);
+        }
+    }
 
-	public void launch(Intent intent) {
-		startActivity(intent);
-	}
+    public void launch(Class<? extends Activity> clazz) {
+        launch(new Intent(this, clazz));
+    }
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		VehicleApp.getInstance().getActivitys().remove(this); // 退出时从集合中拿出
-	}
+    public void launch(Intent intent) {
+        startActivity(intent);
+    }
 
-	public void setTitle(String title) {
-		super.setTitle(title);
-		((TextView) this.findViewById(R.id.tv_title_name)).setText(title);
-	}
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        VehicleApp.getInstance().getActivitys().remove(this); // 退出时从集合中拿出
+    }
 
-	public void setTitle(int titleId) {
-		super.setTitle(titleId);
-		((TextView) this.findViewById(R.id.tv_title_name)).setText(titleId);
-	}
+    public void setTitle(String title) {
+        super.setTitle(title);
+        ((TextView) this.findViewById(R.id.tv_title_name)).setText(title);
+    }
 
-	@Override
-	public void onClick(View v) {
-		if (v.getId() == R.id.btn_title_btn_back_layout) {
-			onBackPressed();
-			return;
-		}
-	}
+    public void setTitle(int titleId) {
+        super.setTitle(titleId);
+        ((TextView) this.findViewById(R.id.tv_title_name)).setText(titleId);
+    }
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-	}
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_title_btn_back_layout) {
+            onBackPressed();
+            return;
+        }
+    }
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-	}
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
-	public interface OnLoginFinishLintener {
-		public void onSuccess();
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 
-		public void onFailure(ErrorMsg errorMsg);
-	}
+    public interface OnLoginFinishLintener {
+        public void onSuccess();
+
+        public void onFailure(ErrorMsg errorMsg);
+    }
 
 }

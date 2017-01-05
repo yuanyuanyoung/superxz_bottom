@@ -27,94 +27,98 @@ import com.dh.superxz_bottom.framework.net.fgview.Response.ErrorMsg;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class VehicleNoSwipbackActivity extends FragmentActivity implements
-		View.OnClickListener {
+        View.OnClickListener {
 
-	protected Button btn_top_right;
-	private  SystemBarTintManager mTintManager;
-	private WindowManager windowManager;
-	private WindowManager.LayoutParams fluctuateParam;
-	private boolean isShowFluctuate;
-	public AfeiDb afeiDb;
+    protected Button btn_top_right;
+    private SystemBarTintManager mTintManager;
+    private WindowManager windowManager;
+    private WindowManager.LayoutParams fluctuateParam;
+    private boolean isShowFluctuate;
+    public AfeiDb afeiDb;
 
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		VehicleApp.getInstance().addActivity(this);
-		afeiDb = VehicleApp.getInstance().getAfeiDb();
-		if (null == afeiDb) {
-			afeiDb = AfeiDb.create(this, Constant.DB_NAME, true);
-		}
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			//透明状态栏
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        VehicleApp.getInstance().addActivity(this);
+        afeiDb = VehicleApp.getInstance().getAfeiDb();
+        if (null == afeiDb) {
+            afeiDb = AfeiDb.create(this, Constant.DB_NAME, true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-			 mTintManager = new SystemBarTintManager(this);
-			mTintManager.setStatusBarTintEnabled(true);
-			mTintManager.setTintColor(0xF00099CC);
+            mTintManager = new SystemBarTintManager(this);
+            mTintManager.setStatusBarTintEnabled(true);
+            mTintManager.setTintColor(0xF00099CC);
 
-		}
-	}
-	//除去状态栏
-	public void setNomStatus(){
-		mTintManager.setStatusBarTintEnabled(false);
-	}
-	protected void initTop() {
-		RelativeLayout btn_back = (RelativeLayout) this
-				.findViewById(R.id.btn_title_btn_back_layout);
-		if (null != btn_back) {
-			btn_back.setOnClickListener(this);
-		}
-		btn_top_right = (Button) findViewById(R.id.btn_top_right);
-		if (null != btn_top_right) {
-			btn_top_right.setOnClickListener(this);
-		}
-	}
+        }
+    }
 
-	public void launch(Class<? extends Activity> clazz) {
-		launch(new Intent(this, clazz));
-	}
+    //除去状态栏
+    public void setNomStatus() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            mTintManager.setStatusBarTintEnabled(false);
+        }
+    }
 
-	public void launch(Intent intent) {
-		startActivity(intent);
-	}
+    protected void initTop() {
+        RelativeLayout btn_back = (RelativeLayout) this
+                .findViewById(R.id.btn_title_btn_back_layout);
+        if (null != btn_back) {
+            btn_back.setOnClickListener(this);
+        }
+        btn_top_right = (Button) findViewById(R.id.btn_top_right);
+        if (null != btn_top_right) {
+            btn_top_right.setOnClickListener(this);
+        }
+    }
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		VehicleApp.getInstance().getActivitys().remove(this); // 退出时从集合中拿出
-	}
+    public void launch(Class<? extends Activity> clazz) {
+        launch(new Intent(this, clazz));
+    }
 
-	public void setTitle(String title) {
-		super.setTitle(title);
-		((TextView) this.findViewById(R.id.tv_title_name)).setText(title);
-	}
+    public void launch(Intent intent) {
+        startActivity(intent);
+    }
 
-	public void setTitle(int titleId) {
-		super.setTitle(titleId);
-		((TextView) this.findViewById(R.id.tv_title_name)).setText(titleId);
-	}
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        VehicleApp.getInstance().getActivitys().remove(this); // 退出时从集合中拿出
+    }
 
-	@Override
-	public void onClick(View v) {
-		if (v.getId() == R.id.btn_title_btn_back_layout) {
-			onBackPressed();
-			return;
-		}
-	}
+    public void setTitle(String title) {
+        super.setTitle(title);
+        ((TextView) this.findViewById(R.id.tv_title_name)).setText(title);
+    }
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-	}
+    public void setTitle(int titleId) {
+        super.setTitle(titleId);
+        ((TextView) this.findViewById(R.id.tv_title_name)).setText(titleId);
+    }
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-	}
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_title_btn_back_layout) {
+            onBackPressed();
+            return;
+        }
+    }
 
-	public interface OnLoginFinishLintener {
-		public void onSuccess();
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
-		public void onFailure(ErrorMsg errorMsg);
-	}
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    public interface OnLoginFinishLintener {
+        public void onSuccess();
+
+        public void onFailure(ErrorMsg errorMsg);
+    }
 
 }
