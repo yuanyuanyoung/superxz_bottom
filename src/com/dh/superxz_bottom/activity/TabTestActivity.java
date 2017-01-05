@@ -12,7 +12,7 @@ import com.dh.superxz_bottom.fragment.BitmapFragment;
 import com.dh.superxz_bottom.fragment.EventBusFragment;
 import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
-import com.dh.superxz_bottom.yinzldemo.VehicleNoSwipbackActivity;
+import com.dh.superxz_bottom.yinzldemo.VehicleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Administrator on 2017/1/4.
  */
 
-public class TabTestActivity extends VehicleNoSwipbackActivity implements FragmentTabUtils.OnRgsExtraCheckedChangedListener {
+public class TabTestActivity extends VehicleActivity implements FragmentTabUtils.OnRgsExtraCheckedChangedListener {
     @ViewInject(R.id.rg_tab)
     private RadioGroup rg_tab;
     @ViewInject(R.id.radioButton1)

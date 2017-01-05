@@ -1,6 +1,5 @@
 package com.dh.superxz_bottom.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,8 +23,9 @@ import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
 import com.dh.superxz_bottom.yinzldemo.DatePickerActivity;
 import com.dh.superxz_bottom.yinzldemo.FragmentTabActivity2;
+import com.dh.superxz_bottom.yinzldemo.VehicleNoSwipbackActivity;
 
-public class AllActivity extends Activity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class AllActivity extends VehicleNoSwipbackActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     @ViewInject(R.id.dl_drawer_layout)
     private DrawerLayout dl_drawer_layout;
@@ -85,7 +85,7 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
 
 
     private void initView() {
-
+        setNomStatus();//关闭通用状态栏沉浸
         //沉浸状态栏
         if (Build.VERSION.SDK_INT >= 19) {
             ll_top.setVisibility(View.VISIBLE);
@@ -105,7 +105,7 @@ public class AllActivity extends Activity implements AdapterView.OnItemClickList
 
         lv_side.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1,
-                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "侧滑删除RecyclerView", "7", "8"}));
+                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "侧滑删除RecyclerView", "TabTest", "8"}));
         lv_side.setOnItemClickListener(this);
         tv_menu.setOnClickListener(this);
         btn_top_right.setOnClickListener(this);

@@ -54,7 +54,7 @@ public class VehicleNoSwipbackActivity extends FragmentActivity implements
         }
     }
 
-    //除去状态栏
+    //除去状态栏颜色
     public void setNomStatus() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mTintManager.setStatusBarTintEnabled(false);
