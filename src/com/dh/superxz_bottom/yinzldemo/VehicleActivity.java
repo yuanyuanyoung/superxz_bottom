@@ -26,8 +26,8 @@ import com.dh.superxz_bottom.VehicleApp;
 import com.dh.superxz_bottom.constant.Constant;
 import com.dh.superxz_bottom.framework.db.AfeiDb;
 import com.dh.superxz_bottom.framework.net.fgview.Response.ErrorMsg;
+import com.dh.superxz_bottom.view.StatusBarUtil.SystemBarTintManager;
 import com.dh.superxz_bottom.view.SwipeBackLayout;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class VehicleActivity extends FragmentActivity implements
         View.OnClickListener {
