@@ -14,17 +14,13 @@
 
         <RadioButton
             android:id="@+id/radioButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/RadioButtonFragmentContacts"
 
             android:text="RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/RadioButtonFragmentContacts"
             android:text="RadioButton" />
     </RadioGroup>
 
