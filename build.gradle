@@ -17,12 +17,12 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.android.support:support-v4:19.1.0'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    compile 'com.github.orangegangsters:swipy:1.1.0@aar'
     compile 'com.alibaba:fastjson:1.2.23'
+    compile 'com.android.support:design:25.1.0'
 }
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 24
     buildToolsVersion "23.0.3"
     repositories {
         mavenCentral()
@@ -123,7 +123,7 @@ android {
         release.setRoot('build-types/release')
     }
 // if sdk25
-// useLibrary 'org.apache.http.legacy'
+ useLibrary 'org.apache.http.legacy'
 
 }
 def releaseTime() {

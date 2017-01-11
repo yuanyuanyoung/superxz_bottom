@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,20 +20,16 @@ import com.dh.superxz_bottom.framework.log.L;
 import com.dh.superxz_bottom.framework.util.Density;
 import com.dh.superxz_bottom.xutils.view.ViewUtils;
 import com.dh.superxz_bottom.xutils.view.annotation.ViewInject;
-import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
-import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.dh.superxz_bottom.R.id.recyclerview;
 
-public class RecycleTestActivity extends Activity implements SwipyRefreshLayout.OnRefreshListener {
+public class RecycleTestActivity extends Activity {
 
     @ViewInject(recyclerview)
-    private SwipeRecyclerView recyclerView;
-    @ViewInject(R.id.swipyrefreshlayout)
-    private SwipyRefreshLayout swipyrefreshlayout;
+    private RecyclerView recyclerView;
 
     private List<String> list = new ArrayList<String>();
 
@@ -41,6 +38,7 @@ public class RecycleTestActivity extends Activity implements SwipyRefreshLayout.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle_test);
         ViewUtils.inject(this);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         initView();
         initData();
     }
@@ -62,47 +60,11 @@ public class RecycleTestActivity extends Activity implements SwipyRefreshLayout.
     }
 
     private void initView() {
-        recyclerView.setRightViewWidth(Density.of(this, 80));
-        swipyrefreshlayout.setColorSchemeResources(android.R.color.holo_blue_light, android.R.color.holo_red_light, android.R.color.holo_orange_light, android.R.color.holo_green_light);
-        swipyrefreshlayout.setOnRefreshListener(this);
         LinearLayoutManager layout = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layout);
         recyclerView.setAdapter(new MyAdapter());
     }
 
-    @Override
-    public void onRefresh(SwipyRefreshLayoutDirection direction) {
-        recyclerView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return true;
-            }
-        });
-        if (direction == (SwipyRefreshLayoutDirection.BOTTOM)) {
-            MyToast.show(RecycleTestActivity.this, direction + "", 1500);
-        } else {
-            MyToast.show(RecycleTestActivity.this, direction + "", 1500);
-        }
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //Hide the refresh after 2sec
-                RecycleTestActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        swipyrefreshlayout.setRefreshing(false);
-                        recyclerView.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                return false;
-                            }
-                        });
-                    }
-                });
-            }
-        }, 2000);
-
-    }
 
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
@@ -132,16 +94,7 @@ public class RecycleTestActivity extends Activity implements SwipyRefreshLayout.
             arg0.pos = arg1;
             L.e("yinzl", "position is :" + arg1);
             arg0.textview.setText(list.get(arg1));
-            arg0.ll_orderlsit_del.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    list.remove(arg1);
-                    notifyDataSetChanged();
-                }
-            });
-            if (0 != arg0.getView().getScrollX()) {
-                arg0.getView().scrollTo(0, 0);
-            }
+
         }
 
         /**
@@ -162,7 +115,6 @@ public class RecycleTestActivity extends Activity implements SwipyRefreshLayout.
         class ViewHolder extends RecyclerView.ViewHolder {
             TextView textview;
             int pos;
-            LinearLayout ll_orderlsit_del;
             View view;
 
             public View getView() {
@@ -187,7 +139,6 @@ public class RecycleTestActivity extends Activity implements SwipyRefreshLayout.
                 });
                 // TODO Auto-generated constructor stub
                 textview = (TextView) arg0.findViewById(R.id.tv_text);
-                ll_orderlsit_del = (LinearLayout) arg0.findViewById(R.id.ll_delect);
 
             }
 
