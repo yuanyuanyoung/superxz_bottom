@@ -69,6 +69,8 @@
             ></activity>
         <activity android:name=".activity.TabTestActivity"
             android:theme="@style/SwipeActivityTheme" ></activity>
+        <activity android:name=".activity.TestQQSideMenu"
+            android:theme="@style/NoSwipeActivityTheme" ></activity>
     </application>
 
 </manifest>

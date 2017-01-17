@@ -105,7 +105,7 @@ public class AllActivity extends VehicleNoSwipbackActivity implements AdapterVie
 
         lv_side.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1,
-                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "侧滑删除RecyclerView", "TabTest", "8"}));
+                new String[]{"注册", "登录", "FragmentTabActivity2", "忘记密码", "时间选择", "侧滑删除RecyclerView", "TabTest", "TestQQside"}));
         lv_side.setOnItemClickListener(this);
         tv_menu.setOnClickListener(this);
         btn_top_right.setOnClickListener(this);
@@ -146,6 +146,10 @@ public class AllActivity extends VehicleNoSwipbackActivity implements AdapterVie
                 break;
             case 6:
                 intent.setClass(AllActivity.this, TabTestActivity.class);
+                startActivity(intent);
+                break;
+            case 7:
+                intent.setClass(AllActivity.this, TestQQSideMenu.class);
                 startActivity(intent);
                 break;
             default:

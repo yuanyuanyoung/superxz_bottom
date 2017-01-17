@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.dh.superxz_bottom.view.qqSideMenu.CoordinatorMenu
+        android:id="@+id/menu"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--菜单-->
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="#9ED5E4" />
+        </LinearLayout>
+
+        <!--主页-->
+        <com.dh.superxz_bottom.view.qqSideMenu.MainView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <View
+                android:id="@+id/view_title"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#46C4B7" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/view_title">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111111111111111111111111"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111111111111111111111111"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111111111111111111111111"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111111111111111111111111"/>
+
+            </LinearLayout>
+        </com.dh.superxz_bottom.view.qqSideMenu.MainView>
+
+    </com.dh.superxz_bottom.view.qqSideMenu.CoordinatorMenu>
+
+</LinearLayout>
